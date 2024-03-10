@@ -7,9 +7,9 @@
       <div class="main__container__nav">
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Shop</a></li>
+            <li><router-link to="/"> Home </router-link></li>
+            <li> <router-link to="/About">About</router-link> </li>
+            <li><router-link to="/Shop">Shop</router-link></li>
           </ul>
         </nav>
       </div>
@@ -30,7 +30,7 @@
         <div class="main__mobilecontainer__sidebar__bar"></div>
       </div>
       <div class="main__mobilecontainer__pagetitle">
-        <p>Home</p>
+        <p>{{ $router.currentRoute.value.name }}</p>
       </div>
       <div class="main__mobilecontainer__icons">
         <i class="fa-regular fa-bell"></i>
@@ -42,9 +42,15 @@
         </div>
         <div class="main__mobilecontainer__aside__body">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Shop</a></li>
+            <li>
+              <router-link to="/">Home</router-link>
+            </li>
+            <li>
+              <router-link to="/About">About</router-link>
+            </li>
+            <li>
+              <router-link to="/Shop">Shop</router-link>
+            </li>
           </ul>
         </div>
         <div class="main__mobilecontainer__aside__footer">
@@ -70,7 +76,7 @@
 <style lang="scss" scoped>
 .main {
   width: 100%;
-  background-color: #fff;
+  background-color: #DDE6ED;
   padding: 20px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   &__container {
@@ -333,6 +339,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from "vue";
+import router from "../router";
 
 const search = ref("");
 const showInput = ref(false);

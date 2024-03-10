@@ -3,6 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import DefaultLayout from '../layout/Default.vue';
 import HomeView from '../views/Home.vue';
+import AboutView from '../views/About.vue'
+import ShopView from '../views/Shop.vue';
 import NotFoundViewVue from '../views/Notfound.vue';
 const routes = [
   {
@@ -13,6 +15,16 @@ const routes = [
         path: '/',
         name: 'Home',
         component: HomeView,
+      },
+      {
+        path: 'About',
+        name: 'About',
+        component: AboutView,
+      },
+      {
+        path: '/Shop',
+        name: 'Shop',
+        component: ShopView,
       },
       {
         path: '/:pathMatch(.*)*',
